@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Red Hat Display;
+  overflow-x: hidden;
+}
+.swiper {
+  overflow: hidden;
+  position: relative;
+  --v-offset: 60px;
+  --curve-height: 120px;
+}
+
+.swiper:before,
+.swiper:after {
+  content: "";
+  z-index: 99;
+  display: block;
+  background: white;
+  width: calc(100vw + 2 * var(--v-offset));
+  height: var(--curve-height);
+  position: absolute;
+  border-radius: 45%;
+  left: calc(-1 * var(--v-offset));
+  right: calc(-1 * var(--v-offset));
+}
+
+.swiper:before {
+  top: calc(-0.7 * var(--curve-height));
+}
+
+.swiper:after {
+  bottom: calc(-0.7 * var(--curve-height));
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover; 
+}
+
+@media screen and (max-width: 1200px) {
+  .swiper-slide img {
+    height: 300px; 
+  }
+}
+.fa-brands:hover {
+  background: #9acb3b;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transform: scale(1.45); /* Slight scaling on hover */
+}
+.overlay-container {
+  background: linear-gradient(
+    118.35deg,
+    rgba(110, 44, 118, 0.7) 30.35%,
+    rgba(107, 13, 13, 0.28) 100%
+  );
+}
+.heroh3 {
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 56px;
+  text-align: left;
+}
+.h3span {
+  font-family: Red Hat Display;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 56px;
+  text-align: left;
+  color: #9acb3b;
+}
+.h1hero {
+  font-family: Red Hat Display;
+  font-weight: 700;
+  line-height: px;
+  text-align: left;
+}
+.mont {
+  font-family: Montserrat;
+  font-size: 93.6px;
+  font-weight: 600;
+  line-height: 93.6px;
+  text-align: center;
+  color: #263d7b;
+}
+.high {
+  font-family: Red Hat Display;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 32.4px;
+  text-align: center;
+  color: #09a2d6;
+}
+.herocardp {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: #475569;
+}
+.years {
+  background: #6e2c76;
+  color: #fff;
+}
+.card2 {
+  font-family: Montserrat;
+  font-size: 116.38px;
+  font-weight: 600;
+  line-height: 116.38px;
+  text-align: center;
+}
+.card2h3 {
+  font-family: Red Hat Display;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+}
+.decade {
+  font-family: Red Hat Display;
+  
+  font-weight: 700;
+  line-height: 39.69px;
+  text-align: left;
+  color: #263d7b;
+}
+.decadep {
+  font-family: Red Hat Display;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  color: #808080;
+}
+.intra {
+  font-family: Red Hat Display;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -1px;
+  text-align: left;
+  color: #435589;
+}
+.aptbtn {
+  width: Hug (158px) px;
+  height: Hug (44px) px;
+  padding: 12px 18px 12px 18px;
+  gap: 6px;
+  background: #9acb3b;
+  color: #fff;
+}
+.textcomph1 {
+  font-family: Red Hat Display;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 34px;
+  text-align: center;
+  color: #263d7b;
+}
+.textcompp {
+  font-family: Red Hat Display;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  /* text-align: center; */
+  color: #808080;
+  /* margin: auto;   */
+  margin-top: 21px;
+}
+.cardcomp {
+  box-shadow: 0px 1.26px 19.5px 0px #09a2d624;
+}
+.fertility {
+  font-family: Raleway;
+  font-size: 12.81px;
+  font-weight: 700;
+  line-height: 20.38px;
+  letter-spacing: 1.258244514465332px;
+  text-align: left;
+  color: #09a2d6;
+}
+.InVitro {
+  font-family: Montserrat;
+  font-size: 17.62px;
+  font-weight: 700;
+  line-height: 24.66px;
+  text-align: left;
+  color: #263d7b;
+}
+.paragraph {
+  font-family: Red Hat Display;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.17px;
+  text-align: left;
+  color: #08183099;
+}
+.meet {
+  font-family: Montserrat;
+  /* font-size: 47px; */
+  font-weight: 700;
+  /* line-height: 65.8px; */
+  text-align: center;
+  color: #263d7b;
+}
+.overlaydark {
+  background: linear-gradient(
+    118.35deg,
+    rgba(0, 0, 0, 0.4) 30.35%,
+    rgba(0, 0, 0, 0.284) 100%
+  );
+}
+.overlayApp {
+  background: linear-gradient(
+    180deg,
+    rgba(110, 44, 118, 0.7) 0%,
+    rgba(110, 44, 118, 0.79) 100%
+  );
+}
+.appointment {
+  font-family: Montserrat;
+  font-size: 47px;
+  font-weight: 700;
+  line-height: 65.8px;
+  text-align: center;
+  color: #fff;
+}
+.convenient {
+  font-family: Raleway;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32.4px;
+  text-align: center;
+  color: #ffffff73;
+}
+.appshadow {
+  box-shadow: 0px 14px 40px 0px #09a2d621;
+}
+.call {
+  font-family: Montserrat;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 41.6px;
+  text-align: left;
+  color: #263d7b;
+}
+.footerText {
+  font-family: Red Hat Display;
+  /* font-size: 16px; */
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+}
+.aboutimg {
+  clip-path: ellipse(100% 100% at 50% 100%);
+}
+.prop {
+  font-family: Red Hat Display;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 39.69px;
+  text-align: center;
+}
+.who {
+  font-family: Red Hat Display;
+  /* font-size: 18px; */
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  color: #6E2C76;
+}
+.provide{
+  font-family: Red Hat Display;
+/* font-size: 40px; */
+font-weight: 900;
+/* line-height: 55.2px; */
+text-align: left;
+color: #00224F;
+}
+.fusion{
+  font-family: Open Sans;
+font-size: 18px;
+font-weight: 400;
+line-height: 28.8px;
+/* text-align: left; */
+
+}
+.value{
+font-family: Poppins;
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+color: #18181B;
+}
+.myAnim{
+  animation: myAnim 2s ease-in-out 0s infinite alternate-reverse forwards;
+}
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateY(-8px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateY(8px);
+	}
+
+	80% {
+		transform: translateY(6.4px);
+	}
+
+	90% {
+		transform: translateY(-6.4px);
+	}
+}
