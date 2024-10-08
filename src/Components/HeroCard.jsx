@@ -3,7 +3,7 @@ import React from "react";
 export default function HeroCard() {
   return (
     <div className="flex flex-col lg:flex-row items-center ">
-      <div className=" bg-white rounded-l-lg  p-5 px-10 h-[220px] w-[283px] shadow-lg">
+      <div className=" bg-white lg:rounded-l-lg lg:rounded-r-none rounded-t-lg  p-5 px-10 h-[220px] w-[283px] shadow-lg">
         <h1 className="mont">85%</h1>
         <h3 className="high">High Success Rate</h3>
         <p className="herocardp">
@@ -15,7 +15,7 @@ export default function HeroCard() {
         <h3 className=" my-3 card2h3">Years of Experience</h3>
         <p className="">Trusted expertise in fertility treatments.</p>
       </div>
-      <div className=" bg-white rounded-r-lg  p-3 h-[220px] w-[283px] shadow-lg">
+      <div className=" bg-white lg:rounded-r-lg lg:rounded-l-none rounded-b-lg p-3 h-[220px] w-[283px] shadow-lg">
         <h1 className="mont">100+</h1>
         <h3 className="high">Happy Families</h3>
         <p className="herocardp">

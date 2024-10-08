@@ -8,9 +8,12 @@ import Contact from "./Pages/Contact";
 import Blog from "./Pages/Blog";
 import Services from "./Pages/Services";
 import OutletPage from "./Components/OutletPage";
-
-
-
+import InvitroPage from "./Components/Service/InvitroPage";
+import Intrauterine from "./Components/Service/Intrauterine";
+import Intracytoplasmic from "./Components/Service/Intracytoplasmic";
+import SexSelection from "./Components/Service/SexSelection";
+import EggDonation from "./Components/Service/EggDonation";
+import SpermDonation from "./Components/Service/SpermDonation";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +39,31 @@ const router = createBrowserRouter([
       {
         path: "Contact",
         element: <Contact />,
+      },
+      {
+        path: "InvitroPage",
+        element: <InvitroPage />,
+      },
+      {
+        path: "Intrauterine",
+        element: <Intrauterine />,
+      },
+      {
+        path: "Intracytoplasmic",
+        element: <Intracytoplasmic />,
+      },
+      {
+        path: "SexSelection",
+        element: <SexSelection />,
+      },
+
+      {
+        path: "EggDonation",
+        element: <EggDonation />,
+      },
+      {
+        path: "SpermDonation",
+        element: <SpermDonation />,
       },
     ],
   },

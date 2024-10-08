@@ -16,7 +16,7 @@ const OutletPage = () => {
     setLoader(true);
     setTimeout(() => {
       setLoader(false);
-    }, 1000);
+    }, 3000);
   }, []);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const OutletPage = () => {
           {scrollToTopVisible && (
             <button
               onClick={scrollToTop}
-              className="fixed z-50 bottom-4 right-4 bg-[#6E2C76] text-white h-12 w-12 flex justify-center items-center p-2 rounded-full shadow-lg transition-opacity duration-300"
+              className="fixed z-30 bottom-4 right-4 bg-[#6E2C76] text-white h-12 w-12 flex justify-center items-center p-2 rounded-full shadow-lg transition-opacity duration-300"
               style={{ opacity: scrollToTopVisible ? 1 : 0 }}
             >
               <i class="fa-solid fa-arrow-up"></i>

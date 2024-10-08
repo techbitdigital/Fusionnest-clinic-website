@@ -1,10 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { lazy, Suspense, useEffect } from "react";
+import ServiceCard from "../Components/Service/ServiceCard";
 
-export default function Services() {
+const ServiceHero = lazy(() => import("../Components/Service/ServiceHero"));
+
+export default function AboutUs() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div>Services</div>
-  )
+    <div>
+      <Suspense
+        fallback={
+          <img
+            className="flex items-center justify-center"
+            src="/assets/loading.gif"
+            alt="Loading..."
+          />
+        }
+      >
+        <ServiceHero />
+        <ServiceCard />
+      </Suspense>
+    </div>
+  );
 }

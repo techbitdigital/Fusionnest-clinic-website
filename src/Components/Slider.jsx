@@ -41,7 +41,7 @@ const ImageSwiper = () => {
         </p>
       </div>
       <Swiper
-        className="mb-40 mt-20"
+        className="lg:mb-40 mb-20 mt-20"
         spaceBetween={10}
         // slidesPerView={4.1}  // Default for larger screens
         freeMode={true}

@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from "react";
-
-const Hero = lazy(() => import("../Components/AboutHero"));
-const WhoWeAre = lazy(() => import("../Components/WhoWeAre"));
-const OurVision = lazy(() => import("../Components/OurVision"));
+const Hero = lazy(() => import("../Components/AboutFolder/AboutHero"));
+const WhoWeAre = lazy(() => import("../Components/AboutFolder/WhoWeAre"));
+const OurVision = lazy(() => import("../Components/AboutFolder/OurVision"));
+const AbtDoctors = lazy(() => import("../Components/AboutFolder/AbtDoctors"));
 
 export default function AboutUs() {
   return (
@@ -19,6 +19,7 @@ export default function AboutUs() {
         <Hero />
         <WhoWeAre />
         <OurVision />
+        <AbtDoctors />
       </Suspense>
     </div>
   );

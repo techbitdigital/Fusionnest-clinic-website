@@ -3,7 +3,7 @@ import Slider from "../Components/Slider";
 import Hero from "../Components/Hero";
 import Decade from "../Components/Decade";
 import TextComp from "../Components/TextComp";
-import CustomCarousel from "../Components/CustomCarousel";
+import Slick from "../Components/Slick";
 import Doctors from "../Components/Doctors";
 import Appointment from "../Components/Appointment";
 import Testimony from "../Components/Testimony";
@@ -18,7 +18,7 @@ export default function Home() {
       <Hero />
       <Decade />
       <Slider />
-      <CustomCarousel />
+      <Slick />
       <Doctors />
       <Appointment />
       <Testimony />

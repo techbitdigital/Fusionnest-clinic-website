@@ -7,6 +7,7 @@
 body {
   font-family: Red Hat Display;
   overflow-x: hidden;
+  background-color: #f9f9f9;
 }
 .swiper {
   overflow: hidden;
@@ -39,13 +40,13 @@ body {
 
 .swiper-slide img {
   width: 100%;
-  height: 300px; 
-  object-fit: cover; 
+  height: 300px;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 1200px) {
   .swiper-slide img {
-    height: 300px; 
+    height: 300px;
   }
 }
 .fa-brands:hover {
@@ -128,7 +129,7 @@ body {
 }
 .decade {
   font-family: Red Hat Display;
-  
+
   font-weight: 700;
   line-height: 39.69px;
   text-align: left;
@@ -277,58 +278,186 @@ body {
   font-weight: 700;
   line-height: 24px;
   text-align: left;
-  color: #6E2C76;
+  color: #6e2c76;
 }
-.provide{
+.provide {
   font-family: Red Hat Display;
-/* font-size: 40px; */
-font-weight: 900;
-/* line-height: 55.2px; */
-text-align: left;
-color: #00224F;
+  /* font-size: 40px; */
+  font-weight: 900;
+  /* line-height: 55.2px; */
+  text-align: left;
+  color: #00224f;
 }
-.fusion{
+.fusion {
   font-family: Open Sans;
-font-size: 18px;
-font-weight: 400;
-line-height: 28.8px;
-/* text-align: left; */
-
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28.8px;
+  /* text-align: left; */
 }
-.value{
-font-family: Poppins;
-font-size: 16px;
-font-weight: 500;
-line-height: 24px;
-color: #18181B;
+.value {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #18181b;
 }
-.myAnim{
+.myAnim {
   animation: myAnim 2s ease-in-out 0s infinite alternate-reverse forwards;
 }
 @keyframes myAnim {
-	0%,
-	100% {
-		transform: translateY(0);
-	}
+  0%,
+  100% {
+    transform: translateY(0);
+  }
 
-	10%,
-	30%,
-	50%,
-	70% {
-		transform: translateY(-8px);
-	}
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateY(-8px);
+  }
 
-	20%,
-	40%,
-	60% {
-		transform: translateY(8px);
-	}
+  20%,
+  40%,
+  60% {
+    transform: translateY(8px);
+  }
 
-	80% {
-		transform: translateY(6.4px);
-	}
+  80% {
+    transform: translateY(6.4px);
+  }
 
-	90% {
-		transform: translateY(-6.4px);
-	}
+  90% {
+    transform: translateY(-6.4px);
+  }
+}
+.obs {
+  font-family: Red Hat Display;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: left;
+  color: #6e2c76;
+}
+.ogun {
+  font-family: Red Hat Display;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: left;
+}
+.descript {
+  font-family: Red Hat Display;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: left;
+  color: #848484;
+}
+.descript2 {
+  font-family: Red Hat Display;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: left;
+  color: #848484;
+}
+.serviceh1 {
+  font-family: Raleway;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 56px;
+  text-align: center;
+  color: #00224f;
+}
+.appointBtn {
+  width: Hug (105px) px;
+  height: Hug (46px) px;
+  /* padding: 10px 18px 10px 18px; */
+  gap: 10px;
+  border: 1px solid #6e2c76;
+  color: #6e2c76;
+}
+.overlay-container2 {
+  background: linear-gradient(
+    117.07deg,
+    rgba(110, 44, 118, 0.5) 7.12%,
+    rgba(110, 44, 118, 0.35) 100%
+  );
+}
+.ivf {
+  font-family: Montserrat;
+  /* font-size: 18px; */
+  font-weight: 700;
+  line-height: 21.94px;
+  /* text-align: left; */
+  color: #00224f;
+}
+.ivfPara {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  text-align: justified;
+}
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, auto);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 5 / 3;
+  border-right: 2px solid #ccc;
+}
+
+.div2 {
+  grid-area: 1 / 3 / 4 / 6;
+}
+
+.div3 {
+  grid-area: 4 / 3 / 5 / 6;
+  border-top: 2px solid #ccc;
+}
+
+.div4 {
+  grid-area: 4 / 5 / 5 / 6;
+  border-top: 2px solid #ccc;
+}
+.div5 {
+  grid-area: 4 / 3 / 6 / 6; /* Positioned directly under .div2 */
+  border-top: 2px solid #ccc;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 1024px) {
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .div1 {
+    grid-area: 1 / 1 / 2 / 2;
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .div2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .div5 {
+    grid-area: 4 / 1 / 3 / 2;
+  }
+
+  .div3,
+  .div4 {
+    grid-area: auto / 1 / auto / 2;
+    border-top: none;
+  }
+}
+.custom-disc li::marker {
+  font-size: 0.6em; /* Adjust this value for a smaller size */
 }
