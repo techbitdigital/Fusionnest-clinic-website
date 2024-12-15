@@ -1,15 +1,22 @@
 import React, { useEffect } from "react";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function EggDonation() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="lg:mb-40 lg:mt-0 mt-28">
-      <div className="lg:mt-5 relative">
+      <div data-aos="zoom-out" className="lg:mt-5 relative">
         <img
           draggable="false"
           onContextMenu={(e) => e.preventDefault()}
@@ -25,7 +32,7 @@ export default function EggDonation() {
         </div>
       </div>
 
-      <div className="hidden lg:block lg:mt-20 rounded-lg  max-w-5xl m-auto">
+      <div data-aos="fade-right" className="hidden lg:block lg:mt-20 rounded-lg  max-w-5xl m-auto">
         <Breadcrumb
           spacing="8px"
           separator={<ChevronRightIcon color="gray.500" />}
@@ -42,8 +49,8 @@ export default function EggDonation() {
           </BreadcrumbItem>
         </Breadcrumb>
       </div>
-      <div className=" lg:mt-20 rounded-lg  max-w-5xl m-auto  bg-white shadow-2xl">
-        <div className="lg:p-10 p-3">
+      <div className=" lg:mt-20 rounded-lg  max-w-5xl m-auto  bg-white">
+        <div data-aos="fade-up" className="lg:p-10 p-3">
           <h3 className="ivf mt-5 lg:mt-0 lg:text-lg w-full text-2xl">
           Egg Donation
           </h3>
@@ -79,7 +86,7 @@ export default function EggDonation() {
           </p>
         </div>
         <div className="w-full h-full border  bg-[#D9D9D9]"></div>
-        <div className="lg:p-10 p-3">
+        <div data-aos="fade-up" className="lg:p-10 p-3">
           <h3 className="ivf text-center lg:text-left my-5 lg:mt-0 lg:text-lg w-full text-2xl">
             TYPES OF SPERM DONATION
           </h3>
@@ -144,7 +151,7 @@ export default function EggDonation() {
         </div> */}
         {/* <div className="w-full h-full border  bg-[#D9D9D9]"></div> */}
 
-        <div className="lg:px-10 mt-10 px-3">
+        <div data-aos="fade-up" className="lg:px-10 mt-10 px-3">
           <h3 className="ivf text-center lg:text-left mt-5 lg:mt-0 lg:text-lg w-full text-2xl">
           Basic Requirements for Sperm Donors
           </h3>
@@ -167,7 +174,7 @@ export default function EggDonation() {
           </ul>
         </div>
 
-        <div class="spacer  h-10 border-r border-[#D9D9D9]"></div>
+        <div class="spacer  h-16 border-[#D9D9D9]"></div>
       </div>
     </div>
   );

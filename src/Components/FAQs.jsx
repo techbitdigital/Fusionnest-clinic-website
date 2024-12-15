@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -7,19 +7,25 @@ import {
   AccordionIcon,
   Box,
 } from "@chakra-ui/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FAQs = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
       <div>
-        <div className="text-center">
+        <div data-aos="fade-up"  className="text-center">
           <h1 className="textcomph1 ">Frequently Asked Questions</h1>
           <p className="textcompp lg:[155px] lg:p-0 p-3 text-justify lg:text-center mx-auto">
             Here are some frequently asked questions
           </p>
         </div>
         <div className=" max-w-7xl mx-auto lg:my-20 lg:px-40">
-          <div className="lg:mt-10 ">
+          <div data-aos="fade-down"  className="lg:mt-10 ">
             <Accordion
               allowToggle
               className="flex flex-col gap-5 text-[#263D7B]"

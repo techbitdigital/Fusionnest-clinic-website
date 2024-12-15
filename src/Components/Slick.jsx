@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import Card from "./Card";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const cardData = [
   {
@@ -39,11 +41,18 @@ const cardData = [
       "Sperm donors are men from a variety of backgrounds who share common excellence. Some are students, many of whom attend top-tier schools.",
   },
   {
-    srcPath: "../../assets/eggdnor.svg",
+    srcPath: "../../assets/eggDonate.svg",
     paragraph: "Egg Donation",
     h1Intro: "Egg Donation",
     paragraph2:
       "This option is normally used to offer hope to a large number of women who previously would never become pregnant.",
+  },
+  {
+    srcPath: "../../assets/surrogate.svg",
+    paragraph: "Surrogacy treatment & cryopreservation of egg sperm& emprayos",
+    h1Intro: "Surrogacy Treatment",
+    paragraph2:
+      "Surrogacy offers a wonderful pathway to parenthood for those unable to carry a child to term.",
   },
 ];
 
@@ -100,7 +109,7 @@ export default function SimpleSlider() {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           fade: true,
           autoplaySpeed: 3000,
@@ -108,6 +117,11 @@ export default function SimpleSlider() {
       },
     ],
   };
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div className="max-w-7xl m-auto lg:my-20 relative">
       <Slider {...settings}>

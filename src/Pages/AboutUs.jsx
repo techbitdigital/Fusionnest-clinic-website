@@ -9,11 +9,9 @@ export default function AboutUs() {
     <div>
       <Suspense
         fallback={
-          <img
-            className="flex items-center justify-center"
-            src="/assets/loading.gif"
-            alt="Loading..."
-          />
+          <div className="flex  items-center justify-center">
+            <img src="/assets/loading.gif" alt="Loading..." />
+          </div>
         }
       >
         <Hero />

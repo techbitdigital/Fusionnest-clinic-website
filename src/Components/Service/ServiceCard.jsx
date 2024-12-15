@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Card from "../Card";
 import CardService from "./CardService";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const cardData = [
   {
@@ -22,7 +24,7 @@ const cardData = [
       "This is used if the man has a slightly reduced sperm quality, if the woman has irregular ovulation, and/or if the cause of infertility is unexplained.",
   },
   {
-    srcPath: "../../assets/sperm3.svg",
+    srcPath: "../../assets/sexselection.svg",
     paragraph: "SPERM INJECTION",
     h1Intro: "Intracytoplasmic sperm injection",
     button: "Read More",
@@ -31,7 +33,7 @@ const cardData = [
       "This procedure addresses mainly male factor infertility, and has reduced considerably with the use of donor sperm in infertility treatment/management.",
   },
   {
-    srcPath: "../../assets/selection.svg",
+    srcPath: "../../assets/sperminjection.png",
     paragraph: "SEX SELECTION",
     h1Intro: "Sex selection",
     button: "Read More",
@@ -49,13 +51,22 @@ const cardData = [
       "Sperm donors are men from a variety of backgrounds who share common excellence. Some are students, many of whom attend top-tier schools.",
   },
   {
-    srcPath: "../../assets/eggdnor.svg",
+    srcPath: "../../assets/eggDonate.svg",
     paragraph: "Egg Donation",
     h1Intro: "Egg Donation",
     to: "/EggDonation",
     button: "Read More",
     paragraph2:
       "This option is normally used to offer hope to a large number of women who previously would never become pregnant.",
+  },
+  {
+    srcPath: "../../assets/surrogate.svg",
+    paragraph: "Surrogacy treatment & cryopreservation of egg sperm& emprayos",
+    h1Intro: "Surrogacy Treatment",
+    to: "/Surrogate",
+    button: "Read More",
+    paragraph2:
+      "Surrogacy offers a wonderful pathway to parenthood for those unable to carry a child to term.",
   },
 ];
 
@@ -64,6 +75,10 @@ export default function ServiceCard() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    AOS.init({ duration: 700 });
+    AOS.refresh();
+  }, []);
   return (
     <div>
       <h1 className="serviceh1 mb-10">Our Services</h1>

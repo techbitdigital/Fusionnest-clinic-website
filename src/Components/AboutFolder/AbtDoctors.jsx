@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function AbtDoctors() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div className="max-w-6xl m-auto mb-20">
-      <div className="text-center my-10 lg:mt-0 p-2 lg:p-0">
+      <div data-aos="fade-up" className="text-center my-10 lg:mt-0 p-2 lg:p-0">
         <h1 className="meet text-4xl leading-10 lg:leading-[65.8px]  lg:text-[47px]">
           Meet Our Certified Doctors
         </h1>
         <p className="textcompp text-[18px]">
           Our team of fertility specialists and compassionate staff are
-          dedicated to <br className="lg:block hidden"/> providing personalized care and support.
+          dedicated to <br className="lg:block hidden" /> providing personalized
+          care and support.
         </p>
       </div>
       <div className="flex p-3 lg:mb-0 mb-20 lg:p-0 lg:flex-row flex-col-reverse mb10 items-center gap-5">
-        
-        <div className="flex flex-col ">
+        <div data-aos="fade-down" className="flex flex-col ">
           <h3 className="obs">Obstetrics and Gynecology</h3>
           <h1 className="ogun">
             DR. OGUNDIMU EBENEZER OLADIPO <br /> M.BchB, FWACS
@@ -32,15 +38,15 @@ export default function AbtDoctors() {
             of the University of Washington where he did a course on leadership
             and management in health. He is married with children and his love
             is to see
-            <span className="text-[#6E2C76]  ml-1 font-bold">
-              EVERY WOMAN A MOTHER.
-            </span>
+            <q className="text-[#6E2C76]  ml-1 font-bold">
+              EVERY WOMAN: A MOTHER.
+            </q>
           </p>
         </div>
-        <img src="../../assets/abtOgundimu.svg" alt="" />
+        <img data-aos="fade-up" src="../../assets/abtOgundimu.svg" alt="" />
       </div>
       <div className="flex p-3 lg:p-0 flex-col-reverse lg:flex-row-reverse items-center gap-10">
-        <div className="flex flex-col ">
+        <div data-aos="fade-down" className="flex flex-col ">
           <h3 className="obs">Obstetrics and Gynecology</h3>
           <h1 className="ogun">
             DR. DAPO SOYINKA <br />
@@ -66,12 +72,12 @@ export default function AbtDoctors() {
             He also worked briefly as consultant Obstetrician & Gynaecologist at
             Lagos Island maternity Hospital before venturing into private
             practice. He is married with children and his passion is to see
-            <span className="text-[#6E2C76] ml-1 font-bold">
-              EVERY WOMAN A MOTHER.
-            </span>
+            <q className="text-[#6E2C76] ml-1 font-bold">
+              EVERY WOMAN: A MOTHER.
+            </q>
           </p>
         </div>
-        <img src="../../assets/abtDapo.svg" alt="" />
+        <img data-aos="fade-up" src="../../assets/abtDapo.svg" alt="" />
       </div>
     </div>
   );

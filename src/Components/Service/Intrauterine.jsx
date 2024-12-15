@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 export default function Intrauterine() {
@@ -8,9 +10,14 @@ export default function Intrauterine() {
         window.scrollTo(0, 0);
       }, []);
     
+      useEffect(() => {
+        AOS.init({ duration: 700 });
+        AOS.refresh();
+      }, []);
+      
   return (
     <div className="lg:mb-40 lg:mt-0 mt-28">
-      <div className="lg:mt-5 relative">
+      <div data-aos="fade-down" className="lg:mt-5 relative">
         <img
           draggable="false"
           onContextMenu={(e) => e.preventDefault()}
@@ -25,7 +32,7 @@ export default function Intrauterine() {
           </h1>
         </div>
       </div>
-      <div className="hidden lg:block lg:mt-20 rounded-lg  max-w-5xl m-auto">
+      <div data-aos="fade-down" className="hidden lg:block lg:mt-20 rounded-lg  max-w-5xl m-auto">
         <Breadcrumb
           spacing="8px"
           separator={<ChevronRightIcon color="gray.500" />}
@@ -42,8 +49,8 @@ export default function Intrauterine() {
           </BreadcrumbItem>
         </Breadcrumb>
       </div>
-      <div className=" lg:mt-20 rounded-lg  max-w-5xl m-auto  bg-white shadow-2xl">
-        <div className="lg:p-10 p-3">
+      <div className=" lg:mt-20 rounded-lg  max-w-5xl m-auto  bg-white ">
+        <div data-aos="fade-down" className="lg:p-10 p-3">
           <h3 className="ivf mt-5 lg:mt-0 lg:text-lg w-full text-2xl">
             Intrauterine insemination Fertility Treatment (IUI)
           </h3>
@@ -59,7 +66,7 @@ export default function Intrauterine() {
           </p>
         </div>
         <div className="w-full h-full border  bg-[#D9D9D9]"></div>
-        <div className="lg:p-10 p-3">
+        <div data-aos="fade-up" className="lg:p-10 p-3">
           <h3 className="ivf text-center lg:text-left mt-5 lg:mt-0 lg:text-lg w-full text-2xl">
             IUI Treatment Process/Procedure
           </h3>
@@ -73,7 +80,7 @@ export default function Intrauterine() {
             <li>Infection Screening and HSG </li>
           </ul>
         </div>
-        <div className="lg:px-10 px-3 ">
+        <div data-aos="fade-down" className="lg:px-10 px-3 ">
           <h3 className="ivf mt-5 lg:mt-0 text-center lg:text-start lg:text-lg w-full text-2xl">
             After your assessment screening, then the following
           </h3>
@@ -97,7 +104,7 @@ export default function Intrauterine() {
           </ul>
         </div>
         <div className="w-full my-5 h-full border  bg-[#D9D9D9]"></div>
-         <div class="spacer  h-60 border-r border-[#D9D9D9]"></div>
+         <div class="spacer  h-60  border-[#D9D9D9]"></div>
       </div>
     </div>
   );

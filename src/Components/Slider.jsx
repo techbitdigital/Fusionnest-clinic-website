@@ -1,9 +1,11 @@
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay, Mousewheel } from "swiper/modules"; // Correct way to import modules in Swiper v7+
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/autoplay";
-import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ImageSwiper = () => {
   const localImages = [
@@ -20,14 +22,22 @@ const ImageSwiper = () => {
   const renderSlides = () => {
     return localImages.map((imageSrc, index) => (
       <SwiperSlide key={index}>
-        <img alt={`Slide ${index}`} src={imageSrc} />
+        <img
+          className="swiper-custom-bg "
+          alt={`Slide ${index}`}
+          src={imageSrc}
+        />
       </SwiperSlide>
     ));
   };
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
-      <div className="text-center">
+      <div data-aos="fade-down" className="text-center">
         <h1 className="textcomph1 ">
           Comprehensive Analysis & Medical Consultation
         </h1>
@@ -40,28 +50,29 @@ const ImageSwiper = () => {
           dreams.
         </p>
       </div>
-      <Swiper
-        className="lg:mb-40 mb-20 mt-20"
-        spaceBetween={10}
-        // slidesPerView={4.1}  // Default for larger screens
-        freeMode={true}
-        mousewheel={true}
-        touchRatio={1.5}
-        grabCursor={true}
-        modules={[FreeMode, Autoplay, Mousewheel]}
-        breakpoints={{
-          300: {
-            slidesPerView: 1.5, // On screens >= 768px, show 3 slides
-          },
-          1024: {
-            slidesPerView: 4.1, // On screens >= 1024px, show 4.1 slides
-          },
-        }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        {renderSlides()}
-      </Swiper>
+      <div data-aos="fade-up">
+        <Swiper
+          className="lg:mb-40  mb-20 mt-40 swiper-custom-bg"
+          spaceBetween={10}
+          freeMode={true}
+          mousewheel={true}
+          touchRatio={1.5}
+          grabCursor={true}
+          modules={[FreeMode, Autoplay, Mousewheel]}
+          breakpoints={{
+            300: {
+              slidesPerView: 1.5,
+            },
+            1024: {
+              slidesPerView: 4.1,
+            },
+          }}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {renderSlides()}
+        </Swiper>
+      </div>
     </>
   );
 };

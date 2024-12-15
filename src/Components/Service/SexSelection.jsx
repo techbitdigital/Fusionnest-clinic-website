@@ -1,15 +1,22 @@
 import React, { useEffect } from "react";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-export default function Intrauterine() {
+export default function SexSelection() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="lg:mb-40 lg:mt-0 mt-28">
-      <div className="lg:mt-5 relative">
+      <div data-aos="zoom-in" className="lg:mt-5 relative">
         <img
           draggable="false"
           onContextMenu={(e) => e.preventDefault()}
@@ -24,7 +31,10 @@ export default function Intrauterine() {
           </h1>
         </div>
       </div>
-      <div className="hidden lg:block lg:mt-20 rounded-lg  max-w-5xl m-auto">
+      <div
+        data-aos="fade-up"
+        className="hidden lg:block lg:mt-20 rounded-lg  max-w-5xl m-auto"
+      >
         <Breadcrumb
           spacing="8px"
           separator={<ChevronRightIcon color="gray.500" />}
@@ -41,8 +51,8 @@ export default function Intrauterine() {
           </BreadcrumbItem>
         </Breadcrumb>
       </div>
-      <div className=" lg:mt-20 rounded-lg  max-w-5xl m-auto  bg-white shadow-2xl">
-        <div className="lg:p-10 p-3">
+      <div className=" lg:mt-20 rounded-lg  max-w-5xl m-auto  bg-white ">
+        <div data-aos="fade-left" className="lg:p-10 p-3">
           <h3 className="ivf mt-5 lg:mt-0 lg:text-lg w-full text-2xl">
             Sex Selection
           </h3>
@@ -54,7 +64,7 @@ export default function Intrauterine() {
           </p>
         </div>
         <div className="w-full h-full border  bg-[#D9D9D9]"></div>
-        <div className="lg:p-10 p-3">
+        <div data-aos="fade-right" className="lg:p-10 p-3">
           <h3 className="ivf text-center lg:text-left mt-5 lg:mt-0 lg:text-lg w-full text-2xl">
             Medical Reasons For Carrying Out Sex Selection
           </h3>
@@ -68,7 +78,7 @@ export default function Intrauterine() {
         </div>
         <div className="w-full h-full border  bg-[#D9D9D9]"></div>
 
-        <div className="lg:px-10 mt-10 px-3">
+        <div data-aos="fade-up" className="lg:px-10 mt-10 px-3">
           <h3 className="ivf mt-5 lg:mt-0 text-center lg:text-start lg:text-lg w-full text-2xl">
             Non Medical Reasons For Carrying Out Sex Selection
           </h3>
@@ -89,7 +99,10 @@ export default function Intrauterine() {
           </ul>
         </div>
         <div className="lg:p-0 p-3">
-          <div className="ivf text-center lg:text-left mt-5 lg:mt-0 lg:text-lg w-full text-2xl">
+          <div
+            data-aos="fade-down"
+            className="ivf text-center lg:text-left mt-5 lg:mt-0 lg:text-lg w-full text-2xl"
+          >
             <div className="lg:p-10 p-3">
               <h3 className="ivf text-center lg:text-left mt-5 lg:mt-0 lg:text-lg w-full text-2xl">
                 Medical Reasons For Carrying Out Sex Selection
@@ -109,28 +122,30 @@ export default function Intrauterine() {
             </div>
           </div>
 
-          <div className="ivf text-center lg:text-left mt-5 lg:mt-0 lg:text-lg w-full text-2xl">
+          <div
+            data-aos="fade-left"
+            className="ivf text-center lg:text-left mt-5 lg:mt-0 lg:text-lg w-full text-2xl"
+          >
             <div className="lg:pl-10 p-3">
               <h3 className="ivf text-center lg:text-left mt-5 lg:mt-0 lg:text-lg w-full text-2xl">
                 Pre-implantation genetic diagnosis (PGD)
               </h3>
 
               <p className="ivfPara lg:w-[871px] text-justify mt-5">
-                The sex of embryos created by in vitro fertilization (IVF) can
-                be determined using PGD. PGD involves the removal of one cell
-                from an embryo and analysis of the chromosomes and DNA. This is
-                done three days after fertilization when the embryo has about
-                eight cells and does not appear to affect development. Only
-                embryos with the required genetic characteristics and sex are
-                placed in the woman’s uterus. This could mean choosing embryos
-                that are of desired sex and are known to not be affected by a
-                particular genetic disease.
+                Pre-implantation genetic testing (PGT) is combined with IF for
+                couples with a known genetic condition or a preference for a
+                specific sex, enabling them to avoid passing genetic disorders
+                to future generations. In PT, only embryos with the desired sex
+                or specific genetic traits are selected for implantation. This
+                process can also help parents who may unknowingly carry a
+                genetic condition to avoid passing it on, ensuring that only
+                healthy embryos are transferred to the uterus.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="spacer  h-10 border-r border-[#D9D9D9]"></div>
+        <div class="spacer  h-40 border-[#D9D9D9]"></div>
       </div>
     </div>
   );

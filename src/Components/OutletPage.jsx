@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { TraceSpinner } from "react-spinners-kit";
+import { SwapSpinner } from "react-spinners-kit";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const OutletPage = () => {
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true); // Set loader to true initially
   const [scrollToTopVisible, setScrollToTopVisible] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    setLoader(true);
     setTimeout(() => {
       setLoader(false);
     }, 3000);
@@ -38,28 +33,28 @@ const OutletPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  if (loader) {
+    return (
+      <div className="flex justify-center spinner items-center h-screen">
+        <SwapSpinner color="#672E71" size={100} />
+      </div>
+    );
+  }
+
   return (
     <>
-      {loader ? (
-        <div className="flex justify-center spinner items-center h-screen">
-          <TraceSpinner color="#672E71" size={100} />
-        </div>
-      ) : (
-        <>
-          <Navbar />
-          <Outlet />
-          {scrollToTopVisible && (
-            <button
-              onClick={scrollToTop}
-              className="fixed z-30 bottom-4 right-4 bg-[#6E2C76] text-white h-12 w-12 flex justify-center items-center p-2 rounded-full shadow-lg transition-opacity duration-300"
-              style={{ opacity: scrollToTopVisible ? 1 : 0 }}
-            >
-              <i class="fa-solid fa-arrow-up"></i>
-            </button>
-          )}
-          <Footer />
-        </>
+      <Navbar />
+      <Outlet />
+      {scrollToTopVisible && (
+        <button
+          onClick={scrollToTop}
+          className="fixed z-30 bottom-4 right-4 bg-[#6E2C76] text-white h-12 w-12 flex justify-center items-center p-2 rounded-full shadow-lg transition-opacity duration-300"
+          style={{ opacity: scrollToTopVisible ? 1 : 0 }}
+        >
+          <i className="fa-solid fa-arrow-up"></i>
+        </button>
       )}
+      <Footer />
     </>
   );
 };

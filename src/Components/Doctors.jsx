@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -10,6 +10,8 @@ import {
   Button,
   useDisclosure,
 } from "@chakra-ui/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Doctors() {
   // Separate disclosures for each modal
@@ -26,10 +28,14 @@ export default function Doctors() {
 
   const [scrollBehavior] = useState("inside"); // Enable inside scrolling
 
+  useEffect(() => {
+    AOS.init({ duration: 700 });
+    AOS.refresh();
+  }, []);
   return (
     <div className="p-2">
       {/* Header */}
-      <div className="text-center mt-10 lg:mt-0 p-2 lg:p-0">
+      <div data-aos="fade-up" className="text-center mt-10 lg:mt-0 p-2 lg:p-0">
         <h1 className="meet text-4xl leading-10 lg:leading-[65.8px] lg:text-[47px]">
           Meet Our Certified Doctors
         </h1>
@@ -43,7 +49,7 @@ export default function Doctors() {
       {/* Doctors' Profiles */}
       <div className="flex text-white justify-center items-center lg:items-start flex-col lg:flex-row lg:space-y-0 space-y-5 lg:space-x-9 my-10 lg:my-20">
         {/* Dr. Ogundimu */}
-        <div className="relative group">
+        <div data-aos="fade-down" className="relative group">
           <div className="overlaydark w-full h-full absolute inset-0 rounded-lg"></div>
           <img
             draggable="false"
@@ -75,48 +81,61 @@ export default function Doctors() {
             scrollBehavior={scrollBehavior} // Enable scrolling inside the modal
           >
             <ModalOverlay bg="rgba(0, 0, 0, 0.8)" />
-            <ModalContent className="flex items-center justify-center h-[100vh]">
-              <ModalBody className="p-5 max-w-2xl rounded-xl shadow-2xl lg:h-[65vh] m-auto bg-white overflow-y-auto">
+            <ModalContent className="flex  items-center justify-center h-[100vh]">
+              <ModalBody className="p-5 max-w-2xl relative rounded-xl shadow-2xl lg:h-[65vh] m-auto bg-white overflow-y-auto">
                 {/* Modal body will scroll */}
                 <ModalHeader className="ogun" textAlign="center" fontSize="2xl">
                   DR. OGUNDIMU EBENEZER OLADIPO <br />
                   M.BchB, FWACS
                 </ModalHeader>
+                <div className="absolute right-5 top-5 ">
+                  <ModalFooter>
+                    <Button
+                      colorScheme="purple"
+                      onClick={onOgundimuClose}
+                      mx="auto"
+                    >
+                      <i className="fa-solid text-[#848484] text-4xl fa-xmark"></i>
+                    </Button>
+                  </ModalFooter>
+                </div>
                 <p className="text-center text-[#6e2c76] text-lg mb-4">
                   Obstetrics and Gynecology
                 </p>
-                <p className="descript">
+                <p className="descript lg:w-[550px] ">
                   Dr. Ogundimu is a graduate of Ogun State University with a
                   degree in medicine and surgery. He is a fellow of the West
                   Africa College of Surgeon (WACS) and has worked as a
                   consultant Obstetrician & Gynecologist for over fifteen years
                   in the government sector.
                 </p>
-                <p className="descript lg:w-[567px] mt-3 lg:mt-5">
+                <p className="descript lg:w-[550px] mt-3 lg:mt-5">
                   A versatile fertility surgeon with international experience,
                   Dr. Ogundimu is also an alumnus of the University of
                   Washington where he completed a course on leadership and
                   management in health. His passion is to see
-                  <span className="text-[#6E2C76] ml-1 font-bold">
-                    EVERY WOMAN A MOTHER.
-                  </span>
+                  <q className="text-[#6E2C76] ml-1 font-bold">
+                    EVERY WOMAN: A MOTHER
+                  </q>
                 </p>
-                <ModalFooter>
-                  <Button
-                    colorScheme="purple"
-                    onClick={onOgundimuClose}
-                    mx="auto"
-                  >
-                    <i className="fa-solid text-[#6E2C76] text-4xl fa-xmark"></i>
-                  </Button>
-                </ModalFooter>
+                <div  className="xs:block sm:hidden">
+                  <ModalFooter>
+                    <Button
+                      colorScheme="purple"
+                      onClick={onOgundimuClose}
+                      mx="auto"
+                    >
+                      <i className="fa-solid text-[#848484] text-4xl fa-xmark"></i>
+                    </Button>
+                  </ModalFooter>
+                </div>
               </ModalBody>
             </ModalContent>
           </Modal>
         </div>
 
         {/* Dr. Soyinka */}
-        <div className="relative group">
+        <div data-aos="fade-up" className="relative group">
           <div className="overlaydark w-full h-full absolute inset-0 rounded-lg"></div>
           <img
             draggable="false"
@@ -147,12 +166,23 @@ export default function Doctors() {
           >
             <ModalOverlay bg="rgba(0, 0, 0, 0.8)" />
             <ModalContent className="flex items-center justify-center h-[100vh]">
-              <ModalBody className="p-5 max-w-2xl rounded-xl shadow-2xl lg:h-[80vh] m-auto bg-white overflow-y-auto">
+              <ModalBody className="p-5 relative max-w-2xl rounded-xl shadow-2xl lg:h-[80vh] m-auto bg-white overflow-y-auto">
                 {/* Modal body will scroll */}
                 <ModalHeader className="ogun" textAlign="center" fontSize="2xl">
                   DR. DAPO SOYINKA <br />
                   MBBS LAGOS, FWACS, FMCOS, DMOS GERMANY, MRK UK
                 </ModalHeader>
+                <div className="absolute right-5 top-5 ">
+                  <ModalFooter>
+                    <Button
+                      colorScheme="purple"
+                      onClick={onSoyinkaClose}
+                      mx="auto"
+                    >
+                      <i className="fa-solid text-[#848484] text-4xl fa-xmark"></i>
+                    </Button>
+                  </ModalFooter>
+                </div>
                 <p className="text-center text-[#6e2c76] text-lg mb-4">
                   Obstetrics and Gynecology
                 </p>
@@ -165,20 +195,35 @@ export default function Doctors() {
                   National Postgraduate Medical College of Nigeria.
                 </p>
                 <p className="descript lg:w-[567px]  lg:mt-5">
-                He is a certified hospital administrator with a diploma in minimal invasive surgery (Gynecology Endoscopy) and Reproductive/Fertility medicine from Kiel, Germany (2005-2007). He also holds a degree in reproductive health from the UK. He has established two IVF clinics in Lagos and briefly worked as a consultant Obstetrician & Gynaecologist at Lagos Island Maternity Hospital before starting his private practice. He is married with children and is passionate about ensuring that
-                  <span className="text-[#6E2C76] ml-1 font-bold">
+                  He is a certified hospital administrator with a diploma in
+                  minimal invasive surgery (Gynecology Endoscopy) and
+                  Reproductive/Fertility medicine from Kiel, Germany
+                  (2005-2007).{" "}
+                  <span className="hidden lg:block">
+                    {" "}
+                    He also holds a degree in reproductive health from the UK.
+                    He has established two IVF clinics in Lagos and briefly
+                    worked as a consultant Obstetrician & Gynaecologist at Lagos
+                    Island Maternity Hospital before starting his private
+                    practice.
+                  </span>{" "}
+                  He is married with children and is passionate about ensuring
+                  that
+                  <q className="text-[#6E2C76] ml-1 font-bold">
                     EVERY WOMAN A MOTHER.
-                  </span>
+                  </q>
                 </p>
-                <ModalFooter>
-                  <Button
-                    colorScheme="purple"
-                    onClick={onSoyinkaClose}
-                    mx="auto"
-                  >
-                    <i className="fa-solid text-[#6E2C76] text-4xl fa-xmark"></i>
-                  </Button>
-                </ModalFooter>
+                <div  className="xs:block sm:hidden">
+                  <ModalFooter>
+                    <Button
+                      colorScheme="purple"
+                      onClick={onSoyinkaClose}
+                      mx="auto"
+                    >
+                      <i className="fa-solid text-[#848484] text-4xl fa-xmark"></i>
+                    </Button>
+                  </ModalFooter>
+                </div>
               </ModalBody>
             </ModalContent>
           </Modal>

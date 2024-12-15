@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeroCard from "./HeroCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Array of image URLs
 const images = [
@@ -26,10 +28,15 @@ const Hero = () => {
     fade: true,
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 700 });
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="relative mt-5 w-full">
       {/* Hero Section */}
-      <div className="hero-carousel w-full h-[600px] relative z-10">
+      <div data-aos="zoom-in"  className="hero-carousel w-full h-[600px] relative z-10">
         <Slider {...settings}>
           {images.map((image, index) => (
             <div

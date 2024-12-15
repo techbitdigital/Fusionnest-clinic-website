@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function InvitroPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    AOS.init({ duration: 700 });
+    AOS.refresh();
+  }, []);
+  
   return (
     <div className="lg:mb-40 lg:mt-0 mt-28">
-      <div className="lg:mt-5 relative">
+      <div data-aos="fade-down" className="lg:mt-5 relative">
         <img
           draggable="false"
           onContextMenu={(e) => e.preventDefault()}
@@ -23,7 +31,7 @@ export default function InvitroPage() {
           </h1>
         </div>
       </div>
-      <div className="hidden lg:block lg:mt-20 rounded-lg  max-w-5xl m-auto">
+      <div data-aos="fade-up" className="hidden lg:block lg:mt-20 rounded-lg  max-w-5xl m-auto">
         <Breadcrumb
           spacing="8px"
           separator={<ChevronRightIcon color="gray.500" />}
@@ -40,8 +48,8 @@ export default function InvitroPage() {
           </BreadcrumbItem>
         </Breadcrumb>
       </div>
-      <div className=" lg:mt-20 rounded-lg  max-w-5xl m-auto  bg-white shadow-2xl">
-        <div className="lg:p-10 p-3">
+      <div className=" lg:mt-20 rounded-lg  max-w-5xl m-auto  bg-white">
+        <div data-aos="fade-down" className="lg:p-10 p-3">
           <h3 className="ivf lg:mt-0 mt-5 lg:text-lg w-full text-2xl">
             What Is IVF?
           </h3>
@@ -53,9 +61,9 @@ export default function InvitroPage() {
             the woman’s uterus.
           </p>
         </div>
-        <div className=" w-full h-full border  bg-[#D9D9D9]"></div>
-        <div class="parent">
-          <div class="div1 pt-5 border-r border-[#D9D9D9]">
+        <div  className=" w-full h-full border  bg-[#D9D9D9]"></div>
+        <div  class="parent">
+          <div data-aos="fade-up" class="div1 pt-5 border-r border-[#D9D9D9]">
             <h3 class="ivf  lg:text-lg w-full text-2xl text-center lg:text-start lg:pl-10 lg:p-0  p-3 pr-5 mb-5">
               Who Are The Candidate Of IVF Fertility Treatment
             </h3>
@@ -102,10 +110,10 @@ export default function InvitroPage() {
             </ul>
           </div>
 
-          <div class="spacer lg:block hidden h-60  border-[#D9D9D9]"></div>
+          <div class="spacer lg:block hidden h-20  border-[#D9D9D9]"></div>
 
-          <div class="div2 lg:pb-10  lg:border-b-2">
-            <h3 class="ivf lg:text-lg w-full text-2xl lg:pl-5 lg:text-start text-center pl-3 mt-5 pr-5 mb-5">
+          <div data-aos="fade-down" class="div2 lg:pb-10  lg:border-b-2">
+            <h3 class="ivf lg:text-lg w-full text-2xl lg:p-10 p-3 lg:text-start text-center pl-3 mt-5 pr-5 mb-5">
               IVF Fertility Treatment <br className="lg:hidden" /> Process And
               Procedure
             </h3>
@@ -137,8 +145,6 @@ export default function InvitroPage() {
               </p>
             </div>
           </div>
-
-          {/* <div class="spacer  h-20 border-r border-[#D9D9D9]"></div> */}
         </div>
       </div>
     </div>
