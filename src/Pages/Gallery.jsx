@@ -24,24 +24,28 @@ export default function Gallery() {
       {/* {galleryData.length > 0 ? (
         galleryData.map((item, index) => ( */}
       <div className="flex flex-col lg:flex-row mt-5">
-        <div className="space-y-3  md:ml2">
-          <img className="im w-full " src="../assets/gallery/img1.svg" alt="" />
+        <div className="space-y-3 md:ml2">
+          <img
+            className="im w-full"
+            src="../assets/gallery/img1.svg"
+            alt="Fusion Nest Fertility Centre reception and waiting area in Lagos"
+          />
           <div>
             <img
-              className="g4 w-full "
+              className="g4 w-full"
               src="../assets/gallery/img4.svg"
-              alt=""
+              alt="Fusion Nest Fertility Centre laboratory and IVF equipment"
             />
             <div className="flex flex-col md:flex-row mt-3 gap-2">
               <img
                 className="w-full md:xl:w-[212px] md:lg:w-[170px]"
                 src="../assets/gallery/img6.svg"
-                alt=""
+                alt="Fertility specialist consulting with a patient at Fusion Nest Lagos"
               />
               <img
                 className="w-full md:xl:w-[212px] md:lg:w-[170px]"
                 src="../assets/gallery/img7.svg"
-                alt=""
+                alt="Fusion Nest Fertility Centre modern clinical facility Lagos"
               />
             </div>
           </div>
@@ -50,29 +54,29 @@ export default function Gallery() {
           <div className="flex flex-col md:flex-row items-center">
             <div className="mx-2">
               <img
-                className="w-full "
+                className="w-full"
                 src="../assets/gallery/img2.svg"
-                alt=""
+                alt="Happy couple after successful IVF treatment at Fusion Nest Fertility Centre"
               />
               <img
-                className="float-end ml- mt-2 w-full "
+                className="float-end ml- mt-2 w-full"
                 src="../assets/gallery/img5.svg"
-                alt=""
+                alt="Fusion Nest IVF procedure room and embryology lab Lagos Nigeria"
               />
             </div>
             <div>
               <img
-                className="w-full "
+                className="w-full"
                 src="../assets/gallery/img3.svg"
-                alt=""
+                alt="Fusion Nest Fertility Centre medical team and fertility specialists Lagos"
               />
             </div>
           </div>
           <div>
             <img
-              className="ml-2 img mt-2 w-full "
+              className="ml-2 img mt-2 w-full"
               src="../assets/gallery/img8.svg"
-              alt=""
+              alt="Fusion Nest Fertility Centre patient care and consultation room Lagos"
             />
           </div>
         </div>
