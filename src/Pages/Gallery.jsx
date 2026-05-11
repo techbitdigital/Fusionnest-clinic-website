@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import useSEO from "../hooks/useSEO";
+import seoConfig from "../hooks/seoConfig";
 
 export default function Gallery() {
-  // const [galleryData, setGalleryData] = useState([]);
+  useSEO(seoConfig.gallery);
 
+  // const [galleryData, setGalleryData] = useState([]);
   // useEffect(() => {
   //   // Fetch the gallery data from the API
   //   fetch("http://localhost:1337/api/galleries?populate=*")
